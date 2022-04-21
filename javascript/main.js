@@ -17,6 +17,7 @@ const startGame = () => {
   // vamos a crear un nuevo objeto de lo que será la clase Game
   game = new Game() // crear un juego
   console.log(game) 
+  
   game.gameLoop() // iniciar el loop del nuevo juego
 }
 
