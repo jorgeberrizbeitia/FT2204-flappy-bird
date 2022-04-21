@@ -5,8 +5,9 @@ class Game {
     this.bg = new Image(); // crear la propiedad
     this.bg.src = "./images/bg.png" // quizas lo modifiquemos luego
     this.pollo = new Pollo()
-    this.pipeArr = [ new Pipe(0, "./images/obstacle_top.png") ]
+    this.pipeArr = [ new Pipe(0, "./images/obstacle_top.png"), new Pipe(375, "./images/obstacle_bottom.png") ]
     this.isGameOn = true;
+    this.score = 0;
   }
 
   addNewPipes = () => {
@@ -34,13 +35,7 @@ class Game {
   }
 
   gameOverCollision = () => {
-
-    
-
-    
-
     // de cada pipe, checkear si colisiona con el pollo
-
     this.pipeArr.forEach((eachPipe) => {
 
       if (this.pollo.x < eachPipe.x + eachPipe.w &&
@@ -57,11 +52,7 @@ class Game {
         // 3. la pantalla final aparece
         gameOverScreen.style.display = "flex";
       }
-
     })
-
-      
-  
     }
 
   // todos los metodos que regulan nuestro juego
@@ -77,6 +68,8 @@ class Game {
     this.addNewPipes() // invocar el metodo
     // CHECKEAR SI EL POLLITO ESTA COLISIONANDO CON CADA UNO DE LOS PIPES
     this.gameOverCollision()
+    this.score = this.score + 1 / 60
+    scoreDOM.innerText = Math.floor(this.score)
 
     // this.pipeArr.movePipe()
     this.pipeArr.forEach((eachPipe) => {

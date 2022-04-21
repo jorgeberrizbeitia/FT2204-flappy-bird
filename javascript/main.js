@@ -3,6 +3,7 @@ const startBtn = document.querySelector("#start-btn");
 const restartBtn = document.querySelector("#restart-btn")
 const startScreen = document.querySelector("#splash-screen");
 const gameOverScreen = document.querySelector("#gameover-screen")
+const scoreDOM = document.querySelector("#score")
 const canvas = document.querySelector("#my-canvas")
 const ctx = canvas.getContext("2d")
 
