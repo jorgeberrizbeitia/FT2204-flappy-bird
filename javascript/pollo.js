@@ -9,7 +9,7 @@ class Pollo {
     this.img = new Image()
     this.img.src = "./images/flappy.png"
     this.speed = 2;
-    this.jumpSpeed = 30;
+    this.jumpSpeed = 70;
   }
 
   // metodos del pollo
